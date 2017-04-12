@@ -1,0 +1,41 @@
+{
+  "name": "castlerocklavender",
+  "version": "1.0.0",
+  "description": "Castlerock Lavender website",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/adrianjonmiller/castlerocklavender-jekyll.git"
+  },
+  "keywords": [
+    "website",
+    "lavender",
+    "retail"
+  ],
+  "author": "adrianjonmiller@gmail.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/adrianjonmiller/castlerocklavender-jekyll/issues"
+  },
+  "homepage": "https://github.com/adrianjonmiller/castlerocklavender-jekyll#readme",
+  "dependencies": {
+    "browser-sync": "^2.18.8"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.18.8",
+    "child_process": "^1.0.2",
+    "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.1",
+    "gulp-jshint": "^2.0.4",
+    "gulp-requirejs": "^1.0.0-rc2",
+    "gulp-sass": "^3.1.0",
+    "gulp-sourcemaps": "^2.6.0",
+    "gulp-util": "^3.0.8",
+    "gulp-watch": "^4.3.11",
+    "jshint": "^2.9.4",
+    "jshint-stylish": "^2.2.1"
+  }
+}

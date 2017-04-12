@@ -1,0 +1,44 @@
+.flex {
+  display: flex; }
+  .flex-center {
+    margin: 0 auto; }
+  .flex-fill {
+    flex: 1 0 auto; }
+
+* {
+  margin-top: 0;
+  margin-bottom: 0;
+  box-sizing: border-box; }
+  *:not(head):not(script):not([collapse]) + * {
+    margin-top: 1rem; }
+
+html,
+body {
+  margin: 0;
+  padding: 0; }
+
+ul.unstyle {
+  padding-left: 0;
+  list-style: none; }
+
+.t--header {
+  background-color: orange; }
+  .t--header li {
+    text-align: center;
+    height: 3rem; }
+    .t--header li + li {
+      border-left: solid thin black; }
+  .t--header a {
+    color: white;
+    text-decoration: none;
+    height: 3rem;
+    line-height: 3rem;
+    display: inline-block; }
+
+.t--products {
+  background-color: blue;
+  height: 3rem; }
+
+.t--splash {
+  height: 20rem;
+  background-color: gray; }

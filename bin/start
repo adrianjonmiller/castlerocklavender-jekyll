@@ -1,0 +1,4 @@
+set -e
+echo "Starting Jekyll"
+bundle exec jekyll serve --port 4010 --detach
+cd ../browser-sync start --proxy "localhost:4010" --files "_site/*"

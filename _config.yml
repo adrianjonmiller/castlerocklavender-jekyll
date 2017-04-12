@@ -1,15 +1,10 @@
-assets:
-  compress:
-      css: true
-      js: true
-  features:
-    automatic_img_size: false
-  sources:
-    - _assets/bower
-    - _assets/fonts
-    - _assets/images
-    - _assets/javascripts
-    - _assets/stylesheets
+defaults:
+  - scope:
+      path: "" # an empty string here means all files in the project
+      type: "pages" # previously `post` in Jekyll 2.2.
+    values:
+      layout: page
+      permalink: /:basename:output_ext
 
 exclude:
   - .bowerrc
@@ -20,15 +15,27 @@ exclude:
   - Gemfile
   - Gemfile.lock
   - README.md
-
-ga_analytics: # Add Google Analytics tracking code
+  - src
+  - node_modules
+  - gulpfile.js
+  - package.json
 
 gems:
   - jekyll-assets
-  - jekyll-sitemap
 
-name: castlerocklavender
+assets:
+  compress:
+    css: default
+    js: default
 
-permalink: pretty
+  prefix: "/assets"
 
-url: # Add your site url
+  sources:
+    - _css
+    - img
+    - _js
+    - _fonts
+
+  features:
+    automatic_img_size: true
+    automatic_img_alt : true

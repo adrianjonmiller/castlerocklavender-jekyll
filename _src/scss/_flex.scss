@@ -1,0 +1,11 @@
+.flex {
+  display: flex;
+
+  &-center {
+    margin: 0 auto;
+  }
+
+  &-fill {
+    flex: 1 0 auto;
+  }
+}

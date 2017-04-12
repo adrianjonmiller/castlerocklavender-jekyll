@@ -1,0 +1,19 @@
+<header class="t--header" collapse>
+  {% assign nodes = site.pages | sort: 'order' %}
+  <ul class="unstyle flex">
+    {% for node in nodes %}
+      {% if node.title != nil && node.order > 0%}
+        {% assign loopHalf = forloop.length | divided_by: 2 %}
+
+        <li class="flex-fill {% if node.title == page.title %}is-active{% endif %}" collapse>
+          <a href="{{ node.url | prepend:site.baseurl }}">{{node.title}}</a>
+        </li>
+        {% if loopHalf == forloop.index %}
+          <li collapse>{% img logo %}</li>
+        {% endif %}
+
+
+      {% endif %}
+    {% endfor %}
+  </ul>
+</header>

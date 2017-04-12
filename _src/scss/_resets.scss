@@ -1,0 +1,15 @@
+* {
+  margin-top: 0;
+  margin-bottom: 0;
+  box-sizing: border-box;
+
+  &:not(head):not(script):not([collapse]) + * {
+    margin-top: 1rem;
+  }
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
