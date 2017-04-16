@@ -1,6 +1,21 @@
+@import
+'vars';
+
 .t- {
   &-splash {
-    height: 20rem;
-    background-color: gray;
+    position: relative;
+
+    &-content {
+      background-color: $black;
+      color: $white;
+      margin-top: 0;
+      max-width: 100%;
+      padding: 1rem;
+    }
+
+    > img {
+      display: block;
+      max-width: 100%;
+    }
   }
 }

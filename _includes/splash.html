@@ -1,0 +1,30 @@
+<div class="splash">
+  {% if include.splash_image != nil%}
+    {% img "{{include.splash_image | split: '/' | last }}" width:auto height:auto class:splash-image %}
+  {% endif %}
+  <div class="splash-content align--center-left"><h2 class="splash-content-heading editable">The Lavender Farm is Now Open</h2></div>
+</div>
+
+{% comment %}
+<style media="screen" class="scss">
+  @import 'theme/vars';
+
+  .splash {
+    &-image {
+      max-width: 100%;
+    }
+
+    &-content {
+      background-color: $black;
+      color: $white;
+      margin-top: 0;
+      max-width: 33.3333333vw;
+      padding: 1rem;
+
+      &-heading {
+        font-weight: map-get($weights, light);
+      }
+    }
+  }
+</style>
+{% endcomment %}

@@ -1,19 +1,73 @@
-<header class="t--header" collapse>
+<header class="t--header fixed--top-left" collapse>
   {% assign nodes = site.pages | sort: 'order' %}
-  <ul class="unstyle flex">
-    {% for node in nodes %}
-      {% if node.title != nil && node.order > 0%}
-        {% assign loopHalf = forloop.length | divided_by: 2 %}
-
-        <li class="flex-fill {% if node.title == page.title %}is-active{% endif %}" collapse>
-          <a href="{{ node.url | prepend:site.baseurl }}">{{node.title}}</a>
-        </li>
-        {% if loopHalf == forloop.index %}
-          <li collapse>{% img logo %}</li>
+  <h1 class="align--top-center" collapse>{% img logo.svg %}</h1>
+  <nav class="t--header-nav">
+    <ul class="t--header-nav--tablet unstyle flex">
+      {% for node in nodes %}
+        {% if node.title != nil && node.order > 0%}
+          {% assign loopHalf = forloop.length | divided_by: 2 %}
+          <li class="flex-fill {% if node.title == page.title %}is-active{% endif %}" collapse>
+            <a href="{{ node.url | prepend:site.baseurl }}">{{node.title}}</a>
+          </li>
+          {% if loopHalf == forloop.index %}
+            <li collapse><h1>{% img logo.svg %}</h1></li>
+          {% endif %}
         {% endif %}
+      {% endfor %}
+    </ul>
 
-
-      {% endif %}
-    {% endfor %}
-  </ul>
+    <select class="t--header-nav--mobile align--top-right" name="">
+      {% for node in nodes %}
+        {% if node.title != nil && node.order > 0%}
+          <option value="{{ node.url | prepend:site.baseurl }}">{{node.title}}</option>
+        {% endif %}
+      {% endfor %}
+    </select>
+  </nav>
 </header>
+
+{% comment %}
+<style class="scss">
+  @import
+  'theme/vars',
+  'util/glob';
+
+  .t- {
+    &-header {
+      background-color: map-get($theme, header);
+      height: map-get($heights, header);
+      margin-top: 0;
+      width: 100vw;
+      z-index: z($indexes, header);
+
+      &-nav {
+        &--mobile {
+          @include bp(sm) {
+            display: none;
+          }
+        }
+
+        &--tablet {
+          @include bp(sm) {
+            display: flex;
+          }
+
+          display: none;
+        }
+
+        li {
+          text-align: center;
+
+          a {
+            color: $white;
+            display: inline-block;
+            height: 3rem;
+            line-height: 3rem;
+            text-decoration: none;
+          }
+        }
+      }
+    }
+  }
+</style>
+{% endcomment %}

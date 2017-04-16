@@ -1,6 +1,5 @@
 const child = require('child_process');
 const browserSync = require('browser-sync').create();
-
 const gulp = require('gulp');
 const concat = require('gulp-concat');
 const gutil = require('gulp-util');
@@ -10,19 +9,62 @@ const sourcemaps = require('gulp-sourcemaps');
 const jshint = require('gulp-jshint');
 const stylish = require('jshint-stylish');
 const watch = require('gulp-watch');
+const sassLint = require('gulp-sass-lint');
+const extract = require('gulp-html-extract');
+const plumber = require('gulp-plumber');
+const postcss = require('gulp-postcss');
+const autoprefixer = require('autoprefixer');
+const merge = require('merge-stream');
+const rename = require("gulp-rename");
+const reload = browserSync.reload;
 
 const siteRoot = './_site';
-const cssFiles = './_src/scss/**/*.scss';
+const siteRootHtml = siteRoot + '/**/*.html';
+const cssFiles = ['./_src/scss/**/*.s+(a|c)ss'];
 const jsFiles = './_src/js/*.js';
+const html = ['./**/*.html', '!./_site/*'];
 
 gulp.task('css', () => {
-  return watch(cssFiles, function () {
-    gulp.src(cssFiles)
+
+  var plugins = [
+    autoprefixer({browsers: ['last 2 versions']})
+  ];
+
+  var base = gulp.src(cssFiles)
+    .pipe(plumber())
+    .pipe(sassLint({
+      configFile: '.sass-lint.yml'
+    }))
+    .pipe(sassLint.format())
+    .pipe(sassLint.failOnError())
     .pipe(sass({
-      includePaths: cssFiles
+      includePaths: './_src/scss'
     }).on('error', sass.logError))
-    .pipe(gulp.dest('./_css'));
-  })
+    .pipe(postcss(plugins));
+
+  var partials = gulp.src(html)
+    .pipe(plumber())
+    .pipe(extract({
+      sel: '.scss',
+      strip: true
+    }))
+    .pipe(rename(function(path){
+      path.extname = ".scss"
+    }))
+    .pipe(sassLint({
+      configFile: '.sass-lint.yml'
+    }))
+    .pipe(sassLint.format())
+    .pipe(sassLint.failOnError())
+    .pipe(sass({
+      includePaths: './_src/scss'
+    }).on('error', sass.logError))
+    .pipe(postcss(plugins));
+
+  return merge(base, partials)
+    .pipe(concat('master.css'))
+    .pipe(gulp.dest('./_css'))
+    .pipe(browserSync.stream());
 });
 
 gulp.task('js', () => {
@@ -54,15 +96,13 @@ gulp.task('jekyll', () => {
 
 gulp.task('serve', () => {
   browserSync.init({
-    files: [siteRoot + '/**'],
     port: 4000,
-    server: {
-      baseDir: siteRoot
-    }
+    server: './_site'
   });
 
   gulp.watch(jsFiles, ['js']);
-  gulp.watch(cssFiles, ['css']);
+  gulp.watch([cssFiles, html], ['css']);
+  gulp.watch(siteRootHtml).on('change', reload);
 });
 
 gulp.task('default', ['css', 'js', 'jekyll', 'serve']);

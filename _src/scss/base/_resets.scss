@@ -1,0 +1,35 @@
+:root {
+  font-family: sans-serif;
+  font-size: 10pt;
+  font-size: calc(.3vw + .3vh + 8pt); // sass-lint:disable-line no-duplicate-properties
+}
+
+* {
+  box-sizing: border-box;
+  margin-bottom: 0;
+  margin-top: 0;
+
+  &:not([collapse]) + * {
+    margin-top: 1rem;
+  }
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+
+  > footer {
+    margin-top: auto !important; // sass-lint:disable-line no-important
+  }
+}
+
+img {
+  display: block;
+}

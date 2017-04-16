@@ -1,8 +1,2 @@
-@import
-  "header",
-  "flex",
-  "resets",
-  "unstyle";
-
-@import
-  "theme/glob"
+@import 'base/glob';
+@import 'theme/glob';

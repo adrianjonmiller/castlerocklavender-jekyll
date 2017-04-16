@@ -1,0 +1,11 @@
+@import 'vars';
+
+:root {
+  font-family: 'Lato', sans-serif;
+}
+
+@each $name, $value in $weights {
+  .font--#{$name} {
+    font-weight: $value;
+  }
+}

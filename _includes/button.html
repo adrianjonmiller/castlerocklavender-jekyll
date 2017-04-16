@@ -1,0 +1,33 @@
+{% if include != nil%}
+  {% if include.href != nil%}
+    <form action="{{include.href}}">
+      <a href="{{include.href}}" class="button" type="button" name="button" {% if include.target != nil%} target="include.target" {% endif %}>{{include.text}}</a>
+    </form>
+    {% else %}
+    <button class="button" type="button" name="button">{{include.text}}</button>
+  {% endif %}
+{% endif %}
+
+
+</form>
+
+<style class="scss">
+  @import 'theme/vars';
+
+  .button {
+    background-color: map-get($theme, accent);
+    border: 0;
+    border-radius: .25rem;
+    color: $white;
+    display: inline-block;
+    font-size: 1rem;
+    line-height: 1rem;
+    outline: none;
+    padding: .75rem 1.5rem;
+    text-decoration: none;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+</style>

@@ -1,0 +1,42 @@
+<ul class="banner flex unstyle">
+  <li class="flex-fill" collapse><h5 class="banner-hours">Hours: <span class="editable">M-F: 9-6pm</span></h5></li>
+  <li class="flex-fill flex" collapse>
+    <h6 class="banner-address flex-center">
+      <span>865 Ph 10</span><br>
+      <span>Castle Rock, Washington</span><br>
+      <span>98611</span>
+    </h6>
+  </li>
+  <li class="flex-fill"><h5 class="banner-phone">(360) 353-1905</h5></li>
+</ul>
+
+{% comment %}
+<style media="screen" class="scss">
+  @import 'theme/vars';
+
+  .banner {
+    background-color: map-get($theme, banner);
+    color: $white;
+    padding: .5rem 1rem;
+
+    &-hours,
+    &-phone {
+      font-weight: map-get($weights, light);
+      text-align: center;
+    }
+
+    &-address {
+      font-weight: map-get($weights, light);
+    }
+
+    &-hours {
+      line-height: map-get($heights, banner);
+    }
+
+    &-phone {
+      font-weight: map-get($weights, light);
+      line-height: map-get($heights, banner);
+    }
+  }
+</style>
+{% endcomment %}

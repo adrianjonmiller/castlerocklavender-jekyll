@@ -1,90 +1,202 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <link type="text/css" rel="stylesheet" href="/assets/master.css">
-  </head>
-<body class="s--body">
-  <header class="t--header" collapse>
+  <!--[if lte IE 6]><html class="preIE7 preIE8 preIE9"><![endif]-->
+  <!--[if IE 7]><html class="preIE8 preIE9"><![endif]-->
+  <!--[if IE 8]><html class="preIE9"><![endif]-->
+  <!--[if gte IE 9]><!--><html><!--<![endif]-->
+<head collapse>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>title</title>
+  <meta name="author" content="name">
+  <meta name="description" content="description here">
+  <meta name="keywords" content="keywords,here">
+
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,400i,700,700i" rel="stylesheet">
+  <link rel="shortcut icon" href="favicon.ico" type="image/vnd.microsoft.icon">
+  <link type="text/css" rel="stylesheet" href="/assets/master.css">
+  <!--[if IE]><!-->
+  <script>
+    document.createElement('header');
+    document.createElement('section');
+    document.createElement('main');
+    document.createElement('article');
+    document.createElement('aside');
+    document.createElement('nav');
+    document.createElement('footer');
+  </script>
+  <!--<![endif]-->
+</head>
+  <body class="default">
+    <header class="t--header fixed--top-left" collapse>
   
-  <ul class="unstyle flex">
-    
+  <h1 class="align--top-center" collapse><img src="/assets/logo.svg" width="99" height="75" alt="logo.svg"></h1>
+  <nav class="t--header-nav">
+    <ul class="t--header-nav--tablet unstyle flex">
       
         
-
-        <li class="flex-fill " collapse>
-          <a href="/">home</a>
-        </li>
+          
+          <li class="flex-fill " collapse>
+            <a href="/">Home</a>
+          </li>
+          
         
-
-
-      
-    
       
         
-
-        <li class="flex-fill " collapse>
-          <a href="/uses.html">Uses</a>
-        </li>
+          
+          <li class="flex-fill " collapse>
+            <a href="/uses.html">Uses</a>
+          </li>
+          
         
-
-
-      
-    
       
         
-
-        <li class="flex-fill " collapse>
-          <a href="/gallery.html">Gallery</a>
-        </li>
+          
+          <li class="flex-fill " collapse>
+            <a href="/gallery.html">Gallery</a>
+          </li>
+          
+            <li collapse><h1><img src="/assets/logo.svg" width="99" height="75" alt="logo.svg"></h1></li>
+          
         
-          <li collapse><img src="/assets/logo.png" width="209" height="209" alt="logo.png"></li>
-        
-
-
-      
-    
       
         
-
-        <li class="flex-fill " collapse>
-          <a href="/shop.html">Shop</a>
-        </li>
+          
+          <li class="flex-fill " collapse>
+            <a href="/shop.html">Shop</a>
+          </li>
+          
         
-
-
-      
-    
       
         
-
-        <li class="flex-fill is-active" collapse>
-          <a href="/our_farm.html">Our Farm</a>
-        </li>
+          
+          <li class="flex-fill is-active" collapse>
+            <a href="/our_farm.html">Our Farm</a>
+          </li>
+          
         
-
-
-      
-    
       
         
-
-        <li class="flex-fill " collapse>
-          <a href="/contact.html">Contact</a>
-        </li>
+          
+          <li class="flex-fill " collapse>
+            <a href="/contact.html">Contact</a>
+          </li>
+          
         
-
-
       
-    
-  </ul>
+    </ul>
+
+    <select class="t--header-nav--mobile align--top-right" name="">
+      
+        
+          <option value="/">Home</option>
+        
+      
+        
+          <option value="/uses.html">Uses</option>
+        
+      
+        
+          <option value="/gallery.html">Gallery</option>
+        
+      
+        
+          <option value="/shop.html">Shop</option>
+        
+      
+        
+          <option value="/our_farm.html">Our Farm</option>
+        
+      
+        
+          <option value="/contact.html">Contact</option>
+        
+      
+    </select>
+  </nav>
 </header>
 
-  <div class="container">
+
+
+    <main class="default-main">
+      <div class="container">
   <h1>Our Farm</h1>
   Test
 
 </div>
 
-  <script type="text/javascript" src="/assets/main.js"></script>
-</body>
+    </main>
+    <footer class="footer flex--grid origin">
+  <div class="footer-logo align--top-center">
+    <img src="/assets/logo.svg" width="99" height="75" alt="logo.svg">
+  </div>
+  <div class="">
+    <ul class="unstyle">
+      
+        
+          
+          <li class="flex-fill ">
+            <a href="/">Home</a>
+          </li>
+        
+      
+        
+          
+          <li class="flex-fill ">
+            <a href="/uses.html">Uses</a>
+          </li>
+        
+      
+        
+          
+          <li class="flex-fill ">
+            <a href="/gallery.html">Gallery</a>
+          </li>
+        
+      
+        
+          
+          <li class="flex-fill ">
+            <a href="/shop.html">Shop</a>
+          </li>
+        
+      
+        
+          
+          <li class="flex-fill is-active">
+            <a href="/our_farm.html">Our Farm</a>
+          </li>
+        
+      
+        
+          
+          <li class="flex-fill ">
+            <a href="/contact.html">Contact</a>
+          </li>
+        
+      
+    </ul>
+  </div>
+  <div class="">
+    <ul class="unstyle">
+      <li><a href="#">Privacy Policy</a></li>
+      <li><a href="#">Terms of Service</a></li>
+    </ul>
+  </div>
+
+  <div class="flex-end">
+    <ul class="unstyle">
+      <li><a href="#">Facebook</a></li>
+      <li><a href="#">Twitter</a></li>
+      <li><a href="#">Google</a></li>
+    </ul>
+  </div>
+</footer>
+
+
+
+    <script type="text/javascript" src="/assets/main.js"></script>
+  </body>
 </html>
+
+

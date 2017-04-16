@@ -1,0 +1,13 @@
+.fixed- {
+  position: fixed;
+
+  &-top {
+    @extend .fixed-;
+    top: 0;
+
+    &-left {
+      @extend .fixed--top;
+      left: 0;
+    }
+  }
+}

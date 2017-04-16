@@ -1,0 +1,25 @@
+.flex {
+  display: flex;
+
+  &--grid {
+    @extend .flex;
+    margin-left: -1rem;
+
+    > * {
+      margin-top: 0 !important; // sass-lint:disable-line no-important
+      padding-left: 1rem;
+    }
+  }
+
+  &-center {
+    margin: 0 auto;
+  }
+
+  &-fill {
+    flex: 1 0 auto;
+  }
+
+  &-end {
+    margin-left: auto;
+  }
+}
