@@ -20,8 +20,8 @@ const reload = browserSync.reload;
 
 const siteRoot = './_site';
 const siteRootHtml = siteRoot + '/**/*.html';
-const cssFiles = ['./_src/scss/**/*.s+(a|c)ss'];
-const jsFiles = './_src/js/*.js';
+const cssFiles = ['./src/scss/**/*.s+(a|c)ss'];
+const jsFiles = './src/js/*.js';
 const html = ['./**/*.html', '!./_site/*'];
 
 gulp.task('css', () => {
@@ -38,7 +38,7 @@ gulp.task('css', () => {
     .pipe(sassLint.format())
     .pipe(sassLint.failOnError())
     .pipe(sass({
-      includePaths: './_src/scss'
+      includePaths: './src/scss'
     }).on('error', sass.logError))
     .pipe(postcss(plugins));
 
@@ -57,13 +57,13 @@ gulp.task('css', () => {
     .pipe(sassLint.format())
     .pipe(sassLint.failOnError())
     .pipe(sass({
-      includePaths: './_src/scss'
+      includePaths: './src/scss'
     }).on('error', sass.logError))
     .pipe(postcss(plugins));
 
   return merge(base, partials)
     .pipe(concat('master.css'))
-    .pipe(gulp.dest('./_css'))
+    .pipe(gulp.dest('./_assets/css'))
     .pipe(browserSync.stream());
 });
 
@@ -76,7 +76,7 @@ gulp.task('js', () => {
     }))
     .pipe(jshint.reporter(stylish))
     .on('error', gutil.log.bind(gutil, 'JSHint Error'))
-    .pipe(gulp.dest('_js'))
+    .pipe(gulp.dest('./_assets/js'))
 });
 
 gulp.task('jekyll', () => {

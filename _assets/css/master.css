@@ -435,5 +435,9 @@ hr {
   .page .page-title {
     font-weight: 100; }
 
-.contact input {
-  height: 2rem; }
+.page--contact a {
+  color: #222222;
+  display: inline-block;
+  text-decoration: none; }
+  .page--contact a:hover {
+    text-decoration: underline; }

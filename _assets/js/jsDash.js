@@ -8,7 +8,7 @@ Js.Ready = function(fn) {
   } else {
     document.addEventListener('DOMContentLoaded', fn);
   }
-}
+};
 
 // Loops through the data-behavior creates a instance of a function based the values it finds
 Js.Init = function (context) {
@@ -18,7 +18,7 @@ Js.Init = function (context) {
 
   // Elements Loop
   var elements = context.querySelectorAll('[class*="js-"]');
-  if(elements.length != 0) {
+  if(elements.length !== 0) {
     for(i=0; i<elements.length; i++) {
       var element = elements[i];
       var behaviors = element.getAttribute('class').split(' ');
@@ -40,7 +40,7 @@ Js.Init = function (context) {
       }
     }
   }
-}
+};
 
 // Render content
 Js._render = function(view, d){
@@ -52,7 +52,7 @@ Js._render = function(view, d){
     view.innerHTML = "";
 
   view.appendChild(frag);
-}
+};
 
 // HTTP Request
 Js._request = function(type, url, cb) {
@@ -74,32 +74,34 @@ Js._request = function(type, url, cb) {
   };
 
   request.send();
-}
+};
 
 // Check if has a class
 Js._hasClass = function(el, className) {
   if (el.classList)
-    return el.classList.contains(className)
+    return el.classList.contains(className);
   else
-    return !!el.className.match(new RegExp('(\\s|^)' + className + '(\\s|$)'))
-}
+    return !!el.className.match(new RegExp('(\\s|^)' + className + '(\\s|$)'));
+};
 
 // Add a class
 Js._addClass = function(el, className) {
   if (el.classList)
-    el.classList.add(className)
-  else if (!hasClass(el, className)) el.className += " " + className
-}
+    el.classList.add(className);
+  else if (!hasClass(el, className)) {
+    el.className += " " + className;
+  }
+};
 
 // Remove a class
 Js._removeClass = function(el, className) {
-  if (el.classList)
-    el.classList.remove(className)
-  else if (hasClass(el, className)) {
-    var reg = new RegExp('(\\s|^)' + className + '(\\s|$)')
-    el.className=el.className.replace(reg, ' ')
+  if (el.classList) {
+    el.classList.remove(className);
+  } else if (hasClass(el, className)) {
+    var reg = new RegExp('(\\s|^)' + className + '(\\s|$)');
+    el.className=el.className.replace(reg, ' ');
   }
-}
+};
 
 // Find Closest Element
 Js._closest = function(el, selector) {
@@ -112,7 +114,7 @@ Js._closest = function(el, selector) {
             return true;
         }
         return false;
-    })
+    });
 
     var parent;
 
@@ -126,7 +128,7 @@ Js._closest = function(el, selector) {
     }
 
     return null;
-}
+};
 
 
 // Runs Init after DOM Ready

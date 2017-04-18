@@ -3,7 +3,7 @@ description: > # this means to ignore newlines until "baseurl:"
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://castlerocklavender.com/" # the base hostname & protocol for your site, e.g. http://example.com
 
-uploads_dir: "img"
+uploads_dir: "uploads"
 
 
 defaults:
@@ -27,6 +27,7 @@ exclude:
   - node_modules
   - gulpfile.js
   - package.json
+  - uploads
 
 gems:
   - jekyll-assets
@@ -39,10 +40,11 @@ assets:
   prefix: "/assets"
 
   sources:
-    - _css
-    - img
-    - _js
-    - _fonts
+    - _assets/css
+    - _assets/js
+    - _assets/fonts
+    - _assets/img
+    - uploads
 
   features:
     automatic_img_size: true

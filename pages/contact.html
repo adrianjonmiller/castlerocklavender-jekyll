@@ -30,20 +30,20 @@ title: Contact
     <div class="flex-end">
       <ul class="unstyle">
         <li>
-          <small collapse><i class="ion-ios-telephone color--accent"></i> Phone</small>
+          <small collapse><i class="ion-ios-telephone color--accent"></i> PHONE</small>
           <hr collapse-half>
           <p>
-             <span class="editable">(360) 353-1905</span>
+             <a href="tel:3603531905" class="editable">(360) 353-1905</a>
           </p>
         </li>
         <li>
-          <small collapse><i class="ion-ios-location color--accent"></i> Address</small>
+          <small collapse><i class="ion-ios-location color--accent"></i> ADDRESS</small>
           <hr collapse-half>
-          <p>
+          <a href="https://goo.gl/maps/dzUDF2jxWj22" target="_blank">
             <span>865 Ph 10</span><br>
             <span>Castle Rock, Washington</span><br>
             <span>98611</span>
-          </p>
+          </a>
         </li>
       </ul>
     </div>
@@ -51,12 +51,21 @@ title: Contact
 </div>
 
 
+{% comment %}
 
 <style class="scss">
-  .contact {
-    input {
-      height: 2rem;
+  @import 'theme/vars';
 
+  .page--contact {
+    a {
+      color: map-get($theme, text);
+      display: inline-block;
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
     }
   }
 </style>
+{% endcomment %}
