@@ -20,14 +20,19 @@
 {% comment %}
 <style class="scss">
   @import 'theme/vars';
+  @import 'util/mixins.mediaquries';
 
   .products {
     flex-wrap: wrap;
 
     &-product {
-      margin-top: 0;
-      max-width: 33.333333333%;
-      padding-left: 1rem;
+      @include bp(sm) {
+        margin-top: 0;
+        max-width: 33.333333333%;
+        padding-left: 1rem;
+      }
+
+      margin-top: 1rem;
 
       img {
         max-width: 100%;

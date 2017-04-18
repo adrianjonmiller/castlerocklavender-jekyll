@@ -1,0 +1,12 @@
+[
+  {
+    "script": "jsDash.js",
+    "pages": ["all"],
+    "header": false
+  },
+  { 
+    "script": "main.js",
+    "pages": ["all"],
+    "header": false
+  }
+]

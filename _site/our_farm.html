@@ -7,14 +7,21 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>title</title>
+  <title>Castlerock Lavender | Our Farm</title>
   <meta name="author" content="name">
   <meta name="description" content="description here">
   <meta name="keywords" content="keywords,here">
 
+  <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
   <link href="https://fonts.googleapis.com/css?family=Lato:300,400,400i,700,700i" rel="stylesheet">
   <link rel="shortcut icon" href="favicon.ico" type="image/vnd.microsoft.icon">
   <link type="text/css" rel="stylesheet" href="/assets/master.css">
+
+  
+    
+  
+    
+  
   <!--[if IE]><!-->
   <script>
     document.createElement('header');
@@ -30,7 +37,7 @@
   <body class="default">
     <header class="t--header fixed--top-left" collapse>
   
-  <h1 class="align--top-center" collapse><img src="/assets/logo.svg" width="99" height="75" alt="logo.svg"></h1>
+  <h1 class="t--header-logo align--top-center" collapse><img src="/assets/logo.svg" width="99" height="99" alt="logo.svg"></h1>
   <nav class="t--header-nav">
     <ul class="t--header-nav--tablet unstyle flex">
       
@@ -56,7 +63,7 @@
             <a href="/gallery.html">Gallery</a>
           </li>
           
-            <li collapse><h1><img src="/assets/logo.svg" width="99" height="75" alt="logo.svg"></h1></li>
+            <li class="t--header-logoSpacer" collapse></li>
           
         
       
@@ -119,18 +126,42 @@
 
 
     <main class="default-main">
-      <div class="container">
-  <h1>Our Farm</h1>
-  Test
+      <div class=" container">
+  <div class="page page--our-farm flex--grid">
+    <div class="page-content">
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
+    </div>
+    <div class="sidebar flex-end">
+      <div class="sidebar">
+  <h5 class="font--light">Lavender Uses</h5>
+  
 </div>
+
+
+
+    </div>
+  </div>
+</div>
+
+<style class="scss">
+  @import 'theme/vars';
+
+  .page {
+    padding-top: 4rem;
+
+    .page-title {
+      font-weight: map-get($weights, light);
+    }
+  }
+</style>
 
     </main>
     <footer class="footer flex--grid origin">
   <div class="footer-logo align--top-center">
-    <img src="/assets/logo.svg" width="99" height="75" alt="logo.svg">
+    <img src="/assets/logo.svg" width="99" height="99" alt="logo.svg">
   </div>
-  <div class="">
+  <div class="footer-links">
     <ul class="unstyle">
       
         
@@ -177,14 +208,14 @@
       
     </ul>
   </div>
-  <div class="">
+  <div class="footer-links">
     <ul class="unstyle">
       <li><a href="#">Privacy Policy</a></li>
       <li><a href="#">Terms of Service</a></li>
     </ul>
   </div>
 
-  <div class="flex-end">
+  <div class="footer-social flex-end">
     <ul class="unstyle">
       <li><a href="#">Facebook</a></li>
       <li><a href="#">Twitter</a></li>
@@ -195,7 +226,15 @@
 
 
 
-    <script type="text/javascript" src="/assets/main.js"></script>
+    
+      
+        <script type="text/javascript" src="/assets/jsDash.js"></script>
+      
+    
+      
+        <script type="text/javascript" src="/assets/main.js"></script>
+      
+    
   </body>
 </html>
 

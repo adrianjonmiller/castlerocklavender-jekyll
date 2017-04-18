@@ -1,6 +1,9 @@
-<div class="splash">
-  {% if include.splash_image != nil%}
-    {% img "{{include.splash_image | split: '/' | last }}" width:auto height:auto class:splash-image %}
+<div class="splash origin">
+  {% if include.splash_desktop_image != nil%}
+    {% img "{{include.splash_desktop_image | split: '/' | last }}" width:auto height:auto class:splash-image--desktop collapse %}
+  {% endif %}
+  {% if include.splash_mobile_image != nil%}
+    {% img "{{include.splash_mobile_image | split: '/' | last }}" width:auto height:auto class:splash-image--mobile collapse %}
   {% endif %}
   <div class="splash-content align--center-left"><h2 class="splash-content-heading editable">The Lavender Farm is Now Open</h2></div>
 </div>
@@ -8,17 +11,37 @@
 {% comment %}
 <style media="screen" class="scss">
   @import 'theme/vars';
+  @import 'util/mixins.mediaquries';
 
   .splash {
     &-image {
-      max-width: 100%;
+      &--mobile {
+        @include bp(sm) {
+          display: none;
+        }
+
+        max-width: 100%;
+      }
+
+      &--desktop {
+        @include bp(sm) {
+          display: block;
+        }
+
+        display: none;
+        max-width: 100%;
+      }
     }
 
     &-content {
+      @include bp(sm) {
+        max-width: 33.3333333vw;
+      }
+
       background-color: $black;
       color: $white;
       margin-top: 0;
-      max-width: 33.3333333vw;
+      max-width: calc(100% - 1rem);
       padding: 1rem;
 
       &-heading {

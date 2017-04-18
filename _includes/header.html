@@ -1,6 +1,6 @@
 <header class="t--header fixed--top-left" collapse>
   {% assign nodes = site.pages | sort: 'order' %}
-  <h1 class="align--top-center" collapse>{% img logo.svg %}</h1>
+  <h1 class="t--header-logo align--top-center" collapse>{% img logo.svg %}</h1>
   <nav class="t--header-nav">
     <ul class="t--header-nav--tablet unstyle flex">
       {% for node in nodes %}
@@ -10,7 +10,7 @@
             <a href="{{ node.url | prepend:site.baseurl }}">{{node.title}}</a>
           </li>
           {% if loopHalf == forloop.index %}
-            <li collapse><h1>{% img logo.svg %}</h1></li>
+            <li class="t--header-logoSpacer" collapse></li>
           {% endif %}
         {% endif %}
       {% endfor %}
@@ -40,7 +40,24 @@
       width: 100vw;
       z-index: z($indexes, header);
 
+      &-logo {
+        transform: translate(-50%, -1.25rem);
+      }
+
       &-nav {
+        li {
+          min-width: 14.29%;
+          text-align: center;
+
+          a {
+            color: $white;
+            display: inline-block;
+            height: 3rem;
+            line-height: 3rem;
+            text-decoration: none;
+          }
+        }
+
         &--mobile {
           @include bp(sm) {
             display: none;
@@ -53,18 +70,6 @@
           }
 
           display: none;
-        }
-
-        li {
-          text-align: center;
-
-          a {
-            color: $white;
-            display: inline-block;
-            height: 3rem;
-            line-height: 3rem;
-            text-decoration: none;
-          }
         }
       }
     }

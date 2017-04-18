@@ -3,53 +3,74 @@ layout: default
 title: Home
 permalink: '/'
 order: 1
-splash_image: img/lavendar_farm_splash.png
+splash_desktop_image: img/lavendar_farm_splash.png
+splash_mobile_image: img/lavendar_farm_splash_mobile.png
 ---
 <div class="index-splash" collapse>
-  {% include splash.html splash_image=page.splash_image %}
+  {% include splash.html splash_desktop_image=page.splash_desktop_image splash_mobile_image=page.splash_mobile_image %}
 </div>
 
 <div class="index-banner">
   {% include banner.html %}
 </div>
 <div class="index-content container">
-  <div class="flex--grid">
-    <div class="">
-      <section class="">
-        <div class="">
-          <div class="t--products">
-            {% include products.html %}
-          </div>
-          <div class="t--localHarvest">
-            {% include local_harvest.html %}
-          </div>
+  <div class="index-content-main">
+    <section class="">
+      <div class="">
+        <div class="t--products">
+          {% include products.html %}
         </div>
-      </section>
+        <div class="t--localHarvest">
+          {% include local_harvest.html %}
+        </div>
+      </div>
+    </section>
 
-      <section>
-        <h4>Who we are</h4>
-        {% for page in site.pages %}
-          {% if page.title == 'Our Farm'%}
+    <section>
+      <h4 class="font--light">Who we are</h4>
+      {% for page in site.pages %}
+        {% if page.title == 'Our Farm'%}
+        <p>
           {{page.content}}
-          <a href="{{page.url}}">Read More</a>
-          {% endif %}
-        {% endfor %}
-      </section>
-    </div>
-
-    <aside class="sidebar">
-      {% include sidebar.html %}
-    </aside>
+        </p>
+        <a href="{{page.url}}">Read More</a>
+        {% endif %}
+      {% endfor %}
+    </section>
   </div>
+
+  <aside class="index-content-sidebar">
+    {% include sidebar.html %}
+  </aside>
 </div>
 
 {% comment %}
   <style class="scss">
     @import 'theme/vars';
+    @import 'util/mixins.mediaquries';
 
     .index {
       &-banner {
         margin-bottom: 4rem;
+      }
+
+      &-content {
+        @include bp(sm) {
+          flex-wrap: nowrap;
+        }
+
+        display: flex;
+        flex-wrap: wrap;
+
+        &-sidebar {
+          @include bp(sm) {
+            margin-top: 0;
+            min-width: 23rem;
+          }
+
+          margin-top: 3rem;
+          min-width: 100%;
+        }
       }
     }
   </style>

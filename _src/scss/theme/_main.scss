@@ -2,6 +2,6 @@
 'vars';
 
 main {
-  margin-top: map-get($heights, header);
   margin-bottom: 5rem;
+  margin-top: map-get($heights, header);
 }

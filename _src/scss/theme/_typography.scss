@@ -4,6 +4,19 @@
   font-family: 'Lato', sans-serif;
 }
 
+body {
+  line-height: 1.5rem;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  line-height: 1em;
+}
+
 @each $name, $value in $weights {
   .font--#{$name} {
     font-weight: $value;

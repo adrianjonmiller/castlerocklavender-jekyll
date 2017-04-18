@@ -2,7 +2,7 @@
   <div class="footer-logo align--top-center">
     {% img logo.svg %}
   </div>
-  <div class="">
+  <div class="footer-links">
     <ul class="unstyle">
       {% for node in nodes %}
         {% if node.title != nil && node.order > 0%}
@@ -14,14 +14,14 @@
       {% endfor %}
     </ul>
   </div>
-  <div class="">
+  <div class="footer-links">
     <ul class="unstyle">
       <li><a href="#">Privacy Policy</a></li>
       <li><a href="#">Terms of Service</a></li>
     </ul>
   </div>
 
-  <div class="flex-end">
+  <div class="footer-social flex-end">
     <ul class="unstyle">
       <li><a href="#">Facebook</a></li>
       <li><a href="#">Twitter</a></li>
@@ -33,11 +33,24 @@
 {% comment %}
 <style media="screen" class="scss">
   @import 'theme/vars';
+  @import 'util/mixins.mediaquries';
 
   .footer {
     background-color: map-get($theme, accent);
     color: $white;
-    padding: 1rem 2rem 4rem;
+    padding: 1rem 2rem 5rem;
+
+    &-logo {
+      transform: translate(-50%, -2rem);
+    }
+
+    &-links,
+    &-social {
+      @include bp(sm) {
+        display: block;
+      }
+      display: none;
+    }
 
     a {
       color: $white;

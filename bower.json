@@ -1,0 +1,26 @@
+{
+  "name": "castlerocklavender",
+  "description": "Castlerock Lavender website",
+  "main": "index.html",
+  "authors": [
+    "adrianjonmiller@gmail.com"
+  ],
+  "license": "ISC",
+  "keywords": [
+    "website",
+    "lavender",
+    "retail"
+  ],
+  "homepage": "https://github.com/adrianjonmiller/castlerocklavender-jekyll",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "masonry": "^4.1.1"
+  }
+}

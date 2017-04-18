@@ -6,7 +6,7 @@
     margin-left: -1rem;
 
     > * {
-      margin-top: 0 !important; // sass-lint:disable-line no-important
+      margin-top: 0; // sass-lint:disable-line no-important
       padding-left: 1rem;
     }
   }

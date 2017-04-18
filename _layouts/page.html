@@ -1,7 +1,25 @@
 ---
 layout: default
 ---
-<div class="container">
-  <h1>{{page.title}}</h1>
-  {{ content }}
+<div class=" container">
+  <div class="page page--{{page.title | slugify }} flex--grid">
+    <div class="page-content">
+      {{ content }}
+    </div>
+    <div class="sidebar flex-end">
+      {% include sidebar.html %}
+    </div>
+  </div>
 </div>
+
+<style class="scss">
+  @import 'theme/vars';
+
+  .page {
+    padding-top: 4rem;
+
+    .page-title {
+      font-weight: map-get($weights, light);
+    }
+  }
+</style>

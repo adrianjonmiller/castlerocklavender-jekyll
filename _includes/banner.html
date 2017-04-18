@@ -1,41 +1,72 @@
-<ul class="banner flex unstyle">
-  <li class="flex-fill" collapse><h5 class="banner-hours">Hours: <span class="editable">M-F: 9-6pm</span></h5></li>
-  <li class="flex-fill flex" collapse>
-    <h6 class="banner-address flex-center">
-      <span>865 Ph 10</span><br>
-      <span>Castle Rock, Washington</span><br>
-      <span>98611</span>
-    </h6>
-  </li>
-  <li class="flex-fill"><h5 class="banner-phone">(360) 353-1905</h5></li>
-</ul>
+<div class="banner">
+  <div class="container">
+    <ul class="banner-list flex unstyle">
+      <li class="flex-fill" collapse><h5 class="banner-list-hours"><i class="banner-list-icon ion-calendar" collapse></i><span class="editable">M-F: 9-6pm</span></h5></li>
+      <li class="flex-fill flex" collapse>
+        <i class="banner-list-icon ion-ios-location" collapse></i>
+        <h6 class="banner-list-address">
+          <span>865 Ph 10</span><br>
+          <span>Castle Rock, Washington</span><br>
+          <span>98611</span>
+        </h6>
+      </li>
+      <li class="flex-fill"><i class="banner-list-icon ion-ios-telephone" collapse></i><h5 class="banner-list-phone">(360) 353-1905</h5></li>
+    </ul>
+  </div>
+</div>
 
 {% comment %}
 <style media="screen" class="scss">
   @import 'theme/vars';
+  @import 'util/mixins.mediaquries';
 
   .banner {
     background-color: map-get($theme, banner);
-    color: $white;
-    padding: .5rem 1rem;
 
-    &-hours,
-    &-phone {
-      font-weight: map-get($weights, light);
-      text-align: center;
-    }
+    &-list {
+      @include bp(sm) {
+        flex-wrap: no-wrap;
+      }
 
-    &-address {
-      font-weight: map-get($weights, light);
-    }
+      color: $white;
+      flex-wrap: wrap;
+      padding: .5rem 1rem;
 
-    &-hours {
-      line-height: map-get($heights, banner);
-    }
+      > li {
+        @include bp(sm) {
+          min-width: 0;
+        }
 
-    &-phone {
-      font-weight: map-get($weights, light);
-      line-height: map-get($heights, banner);
+        min-width: 100%;
+        padding-left: 3rem;
+        position: relative;
+      }
+
+      &-icon {
+        font-size: 2rem;
+        left: 1.5rem;
+        position: absolute;
+        top: 50%;
+        transform: translate(-50%, -50%);
+      }
+
+      &-hours,
+      &-phone {
+        font-weight: map-get($weights, light);
+      }
+
+      &-address {
+        font-weight: map-get($weights, light);
+      }
+
+      &-hours {
+        line-height: map-get($heights, banner);
+      }
+
+      &-phone {
+        font-weight: map-get($weights, light);
+        line-height: map-get($heights, banner);
+      }
     }
   }
 </style>
