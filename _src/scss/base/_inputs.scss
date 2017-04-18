@@ -1,0 +1,47 @@
+$input-height: 2.5rem;
+
+$inputs-text:
+email,
+number,
+password,
+search,
+tel,
+text,
+time,
+url;
+
+%input {
+  border-radius: .25rem;
+  box-shadow: 0 0 1px 1px rgba(black, 0.25) inset;
+  display: block;
+  font-size: 1rem;
+  min-height: $input-height;
+  line-height: 1em;
+  margin-top: 0;
+  outline: none;
+  padding: calc( (#{$input-height} - 1rem)/2) .25em;
+  width: 100%;
+}
+
+
+@each $type in $inputs-text {
+  input[type="#{$type}"] {
+    @extend %input;
+  }
+}
+
+textarea {
+  @extend %input;
+}
+
+fieldset {
+  legend {
+    line-height: 1rem;
+    padding-left: .1em;
+    transition: transform .25s ease-in-out;
+  }
+
+  &:not(.has-content):not(.has-focus) > legend:first-child {
+    transform: translate(0, calc(#{$input-height/2} + 50%));
+  }
+}

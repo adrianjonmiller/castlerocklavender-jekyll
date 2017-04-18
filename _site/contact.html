@@ -129,37 +129,65 @@
       <div class=" container">
   <div class="page page--contact flex--grid">
     <div class="page-content">
-      <form action="https://formspree.io/your@email.com" method="POST">
-  <input type="text" name="name">
-  <input type="email" name="_replyto">
-  <input type="hidden" name="_next" value="//site.io/thanks.html" />
-  <input type="hidden" name="_subject" value="New submission!" />
-  <input type="text" name="_gotcha" style="display:none" />
-  <textarea name="name" rows="8" cols="80"></textarea>
-  <input type="submit" value="Send">
+      <h4 class="font--light">Contact Us</h4>
+      <form action="https://formspree.io/your@email.com" method="POST" class="contact js-form">
+        <fieldset>
+          <legend><small>NAME</small></legend>
+          <input type="text" name="name">
+        </fieldset>
+        <fieldset>
+          <legend><small>EMAIL</small></legend>
+          <input type="email" name="_replyto">
+        </fieldset>
+        <fieldset>
+          <p collapse><small>MESSAGE</small></p>
+          <textarea name="name" rows="8" cols="80"></textarea>
+        </fieldset>
+        <input type="hidden" name="_next" value="//site.io/thanks.html" />
+        <input type="hidden" name="_subject" value="New submission!" />
+        <input type="text" name="_gotcha" style="display:none" />
+        
+  
+    <button class="button" type="button" name="button">Send</button>
+  
+
+
+
 </form>
 
+
+      </form>
     </div>
-    <div class="sidebar flex-end">
-      <div class="sidebar">
-  <h5 class="font--light">Lavender Uses</h5>
-  
-</div>
-
-
-
+    <div class="flex-end">
+      <ul class="unstyle">
+        <li>
+          <small collapse><i class="ion-ios-telephone color--accent"></i> Phone</small>
+          <hr collapse-half>
+          <p>
+             <span class="editable">(360) 353-1905</span>
+          </p>
+        </li>
+        <li>
+          <small collapse><i class="ion-ios-location color--accent"></i> Address</small>
+          <hr collapse-half>
+          <p>
+            <span>865 Ph 10</span><br>
+            <span>Castle Rock, Washington</span><br>
+            <span>98611</span>
+          </p>
+        </li>
+      </ul>
     </div>
   </div>
 </div>
 
+
+
 <style class="scss">
-  @import 'theme/vars';
+  .contact {
+    input {
+      height: 2rem;
 
-  .page {
-    padding-top: 4rem;
-
-    .page-title {
-      font-weight: map-get($weights, light);
     }
   }
 </style>

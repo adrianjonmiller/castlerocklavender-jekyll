@@ -22,3 +22,14 @@ h6 {
     font-weight: $value;
   }
 }
+
+@each $name, $value in $theme {
+  .color--#{$name} {
+    color: $value;
+  }
+}
+
+hr {
+  border: none;
+  border-bottom: solid thin map-get($theme, accent);
+}

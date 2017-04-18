@@ -1,0 +1,5 @@
+@import 'vars';
+
+legend {
+  color: map-get($theme, text);
+}

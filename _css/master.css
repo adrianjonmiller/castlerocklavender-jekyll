@@ -44,6 +44,26 @@
   .flex-end {
     margin-left: auto; }
 
+input[type="email"], input[type="number"], input[type="password"], input[type="search"], input[type="tel"], input[type="text"], input[type="time"], input[type="url"], textarea {
+  border-radius: .25rem;
+  box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.25) inset;
+  display: block;
+  font-size: 1rem;
+  min-height: 2.5rem;
+  line-height: 1em;
+  margin-top: 0;
+  outline: none;
+  padding: calc( (2.5rem - 1rem)/2) 0.25em;
+  width: 100%; }
+
+fieldset legend {
+  line-height: 1rem;
+  padding-left: .1em;
+  transition: transform .25s ease-in-out; }
+
+fieldset:not(.has-content):not(.has-focus) > legend:first-child {
+  transform: translate(0, calc(1.25rem + 50%)); }
+
 :root {
   font-family: sans-serif;
   font-size: 10pt;
@@ -58,6 +78,9 @@
 
 [collapse] + * {
   margin-top: 0; }
+
+[collapse-half] + * {
+  margin-top: .5rem; }
 
 html,
 body {
@@ -75,6 +98,21 @@ body {
 
 img {
   display: block; }
+
+legend {
+  padding: 0;
+  display: table;
+  margin-top: 0;
+  float: left; }
+
+fieldset {
+  border: 0;
+  padding: 0.01em 0 0 0;
+  min-width: 0;
+  margin-left: 0; }
+  fieldset textarea,
+  fieldset input {
+    border: none; }
 
 sup, sub {
   font-size: 0.62996rem; }
@@ -167,6 +205,9 @@ ul.unstyle {
   list-style: none;
   padding-left: 0; }
 
+legend {
+  color: #222222; }
+
 main {
   margin-bottom: 5rem;
   margin-top: 3rem; }
@@ -202,6 +243,25 @@ h6 {
 
 .font--bold {
   font-weight: 700; }
+
+.color--accent {
+  color: #7fd8cf; }
+
+.color--background {
+  color: #fff3d8; }
+
+.color--banner {
+  color: #9e896f; }
+
+.color--header {
+  color: #e1c8a4; }
+
+.color--text {
+  color: #222222; }
+
+hr {
+  border: none;
+  border-bottom: solid thin #7fd8cf; }
 
 .index-banner {
   margin-bottom: 4rem; }
@@ -339,7 +399,8 @@ h6 {
 
 @media (min-width: 600px) {
   .sidebar {
-    padding-left: 5rem; } }
+    padding-left: 5rem;
+    width: 22rem; } }
 
 .splash-image--mobile {
   max-width: 100%; }
@@ -373,3 +434,6 @@ h6 {
   padding-top: 4rem; }
   .page .page-title {
     font-weight: 100; }
+
+.contact input {
+  height: 2rem; }
