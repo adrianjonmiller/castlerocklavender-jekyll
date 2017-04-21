@@ -1,6 +1,18 @@
 .fixed- {
   position: fixed;
 
+  &-center {
+    @extend .fixed-;
+    top: 50%;
+    transform: translateY(-50%);
+
+    &-center {
+      @extend .fixed--center;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+
   &-top {
     @extend .fixed-;
     top: 0;
@@ -8,6 +20,11 @@
     &-left {
       @extend .fixed--top;
       left: 0;
+    }
+
+    &-right {
+      @extend .fixed--top;
+      right: 0;
     }
   }
 }

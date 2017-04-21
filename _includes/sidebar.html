@@ -2,13 +2,13 @@
   <h5 class="font--light">Lavender Uses</h5>
   {% for post in site.posts %}
     <article class="{% if forloop.first %}first{% elsif forloop.last %}last{% else %}middle{% endif %}">
-  		<div class="article-head">
-  			<h2 class="title"><a href="/{{ post.url }}/" class="js-pjax">{{ post.title }}</a></h2>
-  			<p class="date">{{ post.date | date: "%b %d, %Y" }}</p>
+  		<div class="sidebar-archive" collapse>
+        <p class="sidebar-archive-date" collapse><small>{{ post.date | date: "%b %d, %Y" }}</small></p>
+  			<h6 class="sidebar-archive-title font--light" collapse><a href="{{ post.url }}">{{ post.title }}</a></h6>
   		</div><!--/.article-head-->
   		<div class="article-content">
   		{{ post.long_description }}
-  		<a href="/{{ post.url }}/" class="full-post-link js-pjax">Read more</a>
+  		<a href="{{ post.url }}" class="sidebar-archive-link">Read more</a>
   		</div><!--/.article-content-->
   	</article>
   	{% if forloop.last %}{% else %}<div class="separater"></div>{% endif %}
@@ -17,12 +17,37 @@
 
 {% comment %}
 <style class="scss">
+  @import 'theme/vars';
   @import 'util/mixins.mediaquries';
 
   .sidebar {
     @include bp(sm) {
       padding-left: 5rem;
       width: 22rem;
+    }
+
+    a {
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+
+    &-archive {
+      &-date {
+        text-transform: uppercase;
+      }
+
+      &-title {
+        > a {
+          color: map-get($theme, text);
+        }
+      }
+
+      &-link {
+        color: map-get($theme, accent);
+      }
     }
   }
 </style>

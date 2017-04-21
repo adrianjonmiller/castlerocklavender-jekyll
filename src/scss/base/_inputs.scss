@@ -37,8 +37,9 @@ textarea {
 fieldset {
   legend {
     line-height: 1rem;
-    padding-left: .1em;
+    padding-left: .25em;
     transition: transform .25s ease-in-out;
+    pointer-events: none;
   }
 
   &:not(.has-content):not(.has-focus) > legend:first-child {

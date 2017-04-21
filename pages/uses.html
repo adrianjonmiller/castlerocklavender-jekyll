@@ -1,5 +1,71 @@
 ---
+layout: default
 title: Uses
 order: 2
+paginate:
+  collection: posts
+  per_page: 5
+  permalink: /uses/:num/
 ---
-test
+
+<div class="container">
+  <div class="page page--{{page.title | slugify }}">
+    <div class="page-content">
+      <!-- This loops through the paginated posts -->
+      {% for post in paginator.posts %}
+        <p class="author" collapse>
+          <small class="date">{{ post.date }}</small>
+        </p>
+        <h5 class="font--light page--uses-posts-title">{{ post.title }}</h5>
+        <div class="content">
+          {{ post.content }}
+        </div>
+        <div class="flex">
+          <a href="{{ post.url }}" class="flex-end">Read More</a>
+        </div>
+
+        <hr class="page--uses-posts-divider">
+      {% endfor %}
+
+      <!-- Pagination links -->
+      <div class="pagination">
+        {% if paginator.previous_page %}
+          <a href="{{ paginator.previous_page_path }}" class="previous">Previous</a>
+        {% else %}
+          <span class="previous">Previous</span>
+        {% endif %}
+        <span class="page_number ">Page: {{ paginator.page }} of {{ paginator.total_pages }}</span>
+        {% if paginator.next_page %}
+          <a href="{{ paginator.next_page_path }}" class="next">Next</a>
+        {% else %}
+          <span class="next ">Next</span>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<style class="scss">
+  @import 'theme/vars';
+
+  .page--uses {
+    &-posts {
+      &-title {
+        border-bottom: solid thin map-get($theme, accent);
+
+        > a {
+          color: map-get($theme, text);
+          text-decoration: none;
+        }
+      }
+
+      &-divider {
+        margin-top: 4rem;
+        display: block;
+        border: 0;
+      }
+    }
+  }
+
+</style>

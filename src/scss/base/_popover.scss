@@ -1,0 +1,16 @@
+.popover {
+  margin-top: 0;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100vw;
+  max-height: 100vh;
+  box-shadow: 0 0 0 100vh rgba(black, 0.8);
+  background-color: rgba(black, 0.8);
+  z-index: 10;
+
+  &:not(:target) {
+    transform: translate(-50%, -1000vh);
+  }
+}

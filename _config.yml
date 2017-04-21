@@ -5,7 +5,6 @@ url: "http://castlerocklavender.com/" # the base hostname & protocol for your si
 
 uploads_dir: "uploads"
 
-
 defaults:
   - scope:
       path: "" # an empty string here means all files in the project
@@ -13,6 +12,11 @@ defaults:
     values:
       layout: page
       permalink: /:basename:output_ext
+  - scope:
+      path: "" # an empty string here means all files in the project
+      type: "posts" # previously `post` in Jekyll 2.2.
+    values:
+      layout: "post"
 
 exclude:
   - .bowerrc
@@ -31,6 +35,7 @@ exclude:
 
 gems:
   - jekyll-assets
+  - octopress-paginate
 
 assets:
   compress:

@@ -5,12 +5,19 @@
       <li class="flex-fill flex" collapse>
         <i class="banner-list-icon ion-ios-location" collapse></i>
         <h6 class="banner-list-address">
-          <span>865 Ph 10</span><br>
-          <span>Castle Rock, Washington</span><br>
-          <span>98611</span>
+          <a href="https://goo.gl/maps/dzUDF2jxWj22">
+            <span>865 Ph 10</span><br>
+            <span>Castle Rock, Washington</span><br>
+            <span>98611</span>
+          </a>
         </h6>
       </li>
-      <li class="flex-fill"><i class="banner-list-icon ion-ios-telephone" collapse></i><h5 class="banner-list-phone">(360) 353-1905</h5></li>
+      <li class="flex-fill">
+        <a href="tel:3603531905">
+          <i class="banner-list-icon ion-ios-telephone" collapse></i>
+          <h5 class="banner-list-phone">(360) 353-1905</h5>
+        </a>
+      </li>
     </ul>
   </div>
 </div>
@@ -35,6 +42,11 @@
       > li {
         @include bp(sm) {
           min-width: 0;
+        }
+
+        a {
+          text-decoration: none;
+          color: $white;
         }
 
         min-width: 100%;

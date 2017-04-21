@@ -1,4 +1,5 @@
 ---
+layout: default
 title: Gallery
 order: 3
 gallery_images:
@@ -8,7 +9,120 @@ gallery_images:
   - gallery_image: /uploads/lavender-photo-2.jpg
   - gallery_image: /uploads/lavender-photo-1.jpg
 ---
+<div class="container">
+  <div class="page">
+    <h2 class="font--light">{{page.title}}</h2>
+    <ul class="gallery unstyle">
+      {% for image in page.gallery_images %}
+        <li class="gallery-image">
+          <a href="#{{image.gallery_image | split: '/' | last | slugify }}">
+            {% img "{{image.gallery_image | split: '/' | last }}" width:auto height:auto collapse %}
+          </a>
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+</div>
+<ul class="unstyle">
+  {% for image in page.gallery_images %}
+    <li id="{{image.gallery_image | split: '/' | last | slugify }}" class="lightbox popover">
+      <div class="align--center-center">
+        <a href="#" class="lightbox-close">Close</a>
+      </div>
+      {% assign prev = forloop.index0 | minus: 1 %}
+      {% assign next = forloop.index0 | plus: 1 %}
+      {% img "{{image.gallery_image | split: '/' | last }}" width:auto height:auto collapse %}
+      {% if prev >= 0 %}
+        <a href="#{{page.gallery_images[prev].gallery_image | split: '/' | last | slugify }}" class="lightbox-prev align--center-left" collapse></a>
+      {% endif %}
+      {% if next < forloop.length %}
+        <a href="#{{page.gallery_images[next].gallery_image | split: '/' | last | slugify }}" class="lightbox-next align--center-right" collapse></a>
+      {% endif %}
+    </li>
+  {% endfor %}
+</ul>
 
-{% for image in page.gallery_images %}
-  {{image.gallery_image}}
-{% endfor %}
+
+<style class="scss">
+  @import 'util/mixins.mediaquries';
+
+  .gallery {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -1rem;
+
+    &-image {
+      @include bp(sm) {
+        max-width: calc(33.33333333% - 1rem);
+      }
+
+      margin-top: 0;
+      max-width: calc(100% - 1rem);
+      margin-left: 1rem;
+      margin-bottom: 1rem;
+
+      img {
+        width: 100%;
+      }
+    }
+  }
+
+  .lightbox {
+    padding: 0 1rem;
+
+    &:target {
+      > img {
+        opacity: 1;
+      }
+    }
+
+    img {
+      opacity: 0;
+      transition: opacity 1s ease;
+      max-width: 100%;
+      max-height: 100%;
+      display: block;
+    }
+
+    &-close {
+      position: absolute;
+      transform: translate(calc(50vw - 100%), -50vh);
+      color: white;
+      text-decoration: none;
+    }
+
+    &-next,
+    &-prev {
+      width: 2rem;
+      height: 2rem;
+      border-radius: 1rem;
+      background-color: white;
+      display: inline-block;
+      background-color: white;
+      text-align: center;
+      line-height: 2rem;
+      text-decoration: none;
+    }
+
+    &-next {
+      transform: translate(-1rem, -50%);
+
+      &:before {
+        content: '>>';
+      }
+    }
+
+    &-prev {
+      transform: translate(1rem, -50%);
+
+      &:before {
+        content: '<<';
+      }
+    }
+
+    img {
+      display: block;
+      margin: 0 auto;
+    }
+  }
+</style>

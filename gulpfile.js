@@ -22,7 +22,7 @@ const siteRoot = './_site';
 const siteRootHtml = siteRoot + '/**/*.html';
 const cssFiles = ['./src/scss/**/*.s+(a|c)ss'];
 const jsFiles = './src/js/*.js';
-const html = ['./**/*.html', '!./_site/*'];
+const html = ['./**/*.html', '!./_site/**/*'];
 
 gulp.task('css', () => {
 

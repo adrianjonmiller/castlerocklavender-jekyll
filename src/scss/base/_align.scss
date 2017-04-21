@@ -10,9 +10,20 @@
     top: 50%;
     transform: translateY(-50%);
 
+    &-center {
+      @extend .align--center;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
     &-left {
       @extend .align--center;
       left: 0;
+    }
+
+    &-right {
+      @extend .align--center;
+      right: 0;
     }
   }
 
