@@ -22,3 +22,10 @@ Js.Dash.form = function (container) {
     });
   }, 100);
 };
+
+Js.Dash.mobileMenu = function (container) {
+  container.addEventListener('change', function (e) {
+    window.location = e.target.value
+  })
+}
+;
