@@ -1,20 +1,14 @@
 <h4 class="font--light editable">Featured Products</h4>
 <ul class="products flex--grid unstyle">
+  {% for product in site.data.products %}
   <li class="products-product">
-    <img src="https://placeponi.es/200/200" alt="" collapse />
-    <p>Title</p>
-    <span>Price</span>
+    <a href="{{product.product_url}}">
+      <img src="{{product.product_image}}" alt="" collapse />
+      <p>{{product.product_title}}</p>
+      <span>&#36; {{product.product_price}}</span>
+    </a>
   </li>
-  <li class="products-product">
-    <img src="https://placeponi.es/200/200" alt="" collapse />
-    <p>Title</p>
-    <span>Price</span>
-  </li>
-  <li class="products-product">
-    <img src="https://placeponi.es/200/200" alt="" collapse />
-    <p>Title</p>
-    <span>Price</span>
-  </li>
+  {% endfor %}
 </ul>
 
 {% comment %}
@@ -30,6 +24,19 @@
         margin-top: 0;
         max-width: 33.333333333%;
         padding-left: 1rem;
+      }
+
+      a {
+        display: block;
+        text-decoration: none;
+        color: map-get($theme, text);
+        padding: .5rem;
+        border-radius: .25rem;
+        transition: box-shadow .5s ease;
+
+        &:hover {
+          box-shadow: 0 0 .25rem rgba($black, 0.25);
+        }
       }
 
       margin-top: 1rem;
