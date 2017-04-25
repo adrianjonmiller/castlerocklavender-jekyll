@@ -1,13 +1,17 @@
 <h4 class="font--light editable">Featured Products</h4>
 <ul class="products flex--grid unstyle">
-  {% for product in site.data.products %}
-  <li class="products-product">
-    <a href="{{product.product_url}}">
-      <img src="{{product.product_image}}" alt="" collapse />
-      <p>{{product.product_title}}</p>
-      <span>&#36; {{product.product_price}}</span>
-    </a>
-  </li>
+  {% for page in site.pages %}
+    {% if page.products %}
+      {% for product in page.products %}
+        <li class="products-product">
+          <a href="{{product.product_url}}">
+            <img src="{{product.product_image}}" alt="" collapse />
+            <p>{{product.product_title}}</p>
+            <span>&#36; {{product.product_price}}</span>
+          </a>
+        </li>
+      {% endfor %}
+    {% endif %}
   {% endfor %}
 </ul>
 
