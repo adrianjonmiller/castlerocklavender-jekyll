@@ -21,6 +21,12 @@
     .align--top-right {
       right: 0; }
 
+[href*='cloudcannon:'] {
+  display: none; }
+
+.cms-editor-active [href*='cloudcannon:'] {
+  display: block; }
+
 .container {
   margin: 0 auto;
   max-width: 960px;
@@ -501,6 +507,12 @@ hr {
   padding-top: 4rem; }
   .page .page-title {
     font-weight: 100; }
+
+[href*='cloudcannon:'] {
+  display: none; }
+
+.cms-editor-active [href*='cloudcannon:'] {
+  display: block; }
 
 .page {
   padding-top: 4rem; }

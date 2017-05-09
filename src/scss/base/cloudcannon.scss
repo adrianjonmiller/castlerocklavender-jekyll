@@ -1,0 +1,8 @@
+[href *='cloudcannon:'] {
+  display: none;
+}
+
+
+.cms-editor-active [href *='cloudcannon:'] {
+  display: block;
+}
