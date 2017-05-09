@@ -8,7 +8,7 @@ title: Contact
   <div class="page page--{{page.title | slugify }} flex--grid">
     <div class="page-content">
       <h4 class="font--light editable">Contact Us</h4>
-      <form action="https://formspree.io/your@email.com" method="POST" class="contact js-form">
+      <form action="https://formspree.io/jen.castlerocklavender@gmail.com" method="POST" class="contact js-form">
         <fieldset>
           <legend><small>NAME</small></legend>
           <input type="text" name="name">
@@ -29,6 +29,13 @@ title: Contact
     </div>
     <div class="flex-end">
       <ul class="unstyle">
+        <li>
+          <small collapse><i class="ion-email color--accent"></i> EMAIL</small>
+          <hr collapse-half>
+          <p>
+            <a href="mailto:jen.castlerocklavender@gmail.com" class="page--contact-email editable"></a>
+          </p>
+        </li>
         <li>
           <small collapse><i class="ion-ios-telephone color--accent"></i> PHONE</small>
           <hr collapse-half>
@@ -57,6 +64,10 @@ title: Contact
   @import 'theme/vars';
 
   .page--contact {
+    &-email::before {
+      content: 'jen.castlerocklavender@gmail.com';
+    }
+
     a {
       color: map-get($theme, text);
       display: inline-block;

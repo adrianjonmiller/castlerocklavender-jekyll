@@ -1,8 +1,8 @@
 <header class="t--header fixed--top-left" collapse>
   {% assign nodes = site.pages | sort: 'order' %}
-  <h1 class="t--header-logo align--top-center" collapse>{% img logo.svg %}</h1>
+  <h1 class="t--header-logo align--top-center" collapse>{% img logo.svg width:"125px" height:"125px" %}</h1>
   <nav class="t--header-nav">
-    <ul class="t--header-nav--tablet unstyle flex">
+    <ul class="t--header-nav--tablet unstyle flex" collapse>
       {% for node in nodes %}
         {% if node.title != nil and node.order and node.url contains ".html" or node.url == '/' %}
           {% assign loopHalf = forloop.length | divided_by: 2 %}
@@ -15,6 +15,10 @@
         {% endif %}
       {% endfor %}
     </ul>
+
+    <div class="t--header-shop--mobile align--top-left">
+      {% include button.html text="Shop" href="https://www.localharvest.org/store/M48678" target="_blank"%}
+    </div>
 
     <select class="t--header-nav--mobile align--top-right js-mobileMenu" name="">
       {% for node in nodes %}
@@ -63,8 +67,8 @@
 
           &.is-active {
             a {
-              color: map-get($theme, text);
               border-bottom: solid .25rem map-get($theme, text);
+              color: map-get($theme, text);
               cursor: default;
             }
           }
@@ -81,6 +85,14 @@
             display: flex;
           }
 
+          display: none;
+        }
+      }
+
+      &-shop--mobile {
+        transform: translate(.5rem, .25rem);
+
+        @include bp(sm) {
           display: none;
         }
       }

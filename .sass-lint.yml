@@ -45,7 +45,7 @@ rules:
     - include: true
   force-attribute-nesting: 1
   force-element-nesting: 1
-  force-pseudo-nesting: 1
+  force-pseudo-nesting: 0
   function-name-format:
     - 1
     - allow-leading-underscore: true
@@ -63,7 +63,7 @@ rules:
     - 1
     - size: 2
   leading-zero:
-    - 1
+    - 0
     - include: false
   mixin-name-format:
     - 1
@@ -74,7 +74,7 @@ rules:
     - 1
     - max-depth: 4
   no-color-keywords: 1
-  no-color-literals: 1
+  no-color-literals: 0
   no-css-comments: 1
   no-debug: 1
   no-duplicate-properties: 1

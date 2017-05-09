@@ -57,37 +57,37 @@
   .flex-end {
     margin-left: auto; }
 
-input[type="email"], input[type="number"], input[type="password"], input[type="search"], input[type="tel"], input[type="text"], input[type="time"], input[type="url"], textarea {
+input [type='email'], input [type='number'], input [type='password'], input [type='search'], input [type='tel'], input [type='text'], input [type='time'], input [type='url'], textarea {
   border-radius: .25rem;
   box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.25) inset;
   display: block;
   font-size: 1rem;
-  min-height: 2.5rem;
   line-height: 1em;
   margin-top: 0;
+  min-height: 2.5rem;
   outline: none;
-  padding: calc( (2.5rem - 1rem)/2) 0.25em;
+  padding: calc((2.5rem - 1rem)/2) 0.25em;
   width: 100%; }
 
 fieldset legend {
   line-height: 1rem;
   padding-left: .25em;
-  transition: transform .25s ease-in-out;
-  pointer-events: none; }
+  pointer-events: none;
+  transition: transform .25s ease-in-out; }
 
 fieldset:not(.has-content):not(.has-focus) > legend:first-child {
   transform: translate(0, calc(1.25rem + 50%)); }
 
 .popover {
+  background-color: rgba(0, 0, 0, 0.8);
+  box-shadow: 0 0 0 100vh rgba(0, 0, 0, 0.8);
+  left: 50%;
   margin-top: 0;
+  max-height: 100vh;
   position: fixed;
   top: 50%;
-  left: 50%;
   transform: translate(-50%, -50%);
   width: 100vw;
-  max-height: 100vh;
-  box-shadow: 0 0 0 100vh rgba(0, 0, 0, 0.8);
-  background-color: rgba(0, 0, 0, 0.8);
   z-index: 10; }
   .popover:not(:target) {
     transform: translate(-50%, -1000vh); }
@@ -128,19 +128,19 @@ img {
   display: block; }
 
 legend {
-  padding: 0;
   display: table;
+  float: left;
   margin-top: 0;
-  float: left; }
+  padding: 0; }
 
 fieldset {
   border: 0;
-  padding: 0.01em 0 0 0;
+  margin-left: 0;
   min-width: 0;
-  margin-left: 0; }
+  padding: 0.01em 0 0; }
   fieldset textarea,
   fieldset input {
-    border: none; }
+    border: 0; }
 
 sup, sub {
   font-size: 0.62996rem; }
@@ -288,7 +288,7 @@ h6 {
   color: #222222; }
 
 hr {
-  border: none;
+  border: 0;
   border-bottom: solid thin #7fd8cf; }
 
 .index-banner {
@@ -330,8 +330,8 @@ hr {
         .banner-list > li {
           min-width: 0; } }
       .banner-list > li a {
-        text-decoration: none;
-        color: #ffffff; }
+        color: #ffffff;
+        text-decoration: none; }
     .banner-list-icon {
       font-size: 2rem;
       left: 1.5rem;
@@ -397,8 +397,8 @@ hr {
       .t--header-nav li a:hover {
         border-bottom: solid 0.25rem #222222; }
     .t--header-nav li.is-active a {
-      color: #222222;
       border-bottom: solid 0.25rem #222222;
+      color: #222222;
       cursor: default; }
   @media (min-width: 600px) {
     .t--header-nav--mobile {
@@ -409,9 +409,14 @@ hr {
       .t--header-nav--tablet {
         display: -ms-flexbox;
         display: flex; } }
+  .t--header-shop--mobile {
+    transform: translate(0.5rem, 0.25rem); }
+    @media (min-width: 600px) {
+      .t--header-shop--mobile {
+        display: none; } }
 
 .localHarvest {
-  margin: 4rem 0; }
+  margin: 0 0 4rem; }
   .localHarvest-list {
     -ms-flex-wrap: wrap;
         flex-wrap: wrap; }
@@ -432,11 +437,11 @@ hr {
         max-width: 33.333333333%;
         padding-left: 1rem; } }
     .products-product a {
-      display: block;
-      text-decoration: none;
-      color: #222222;
-      padding: .5rem;
       border-radius: .25rem;
+      color: #222222;
+      display: block;
+      padding: .5rem;
+      text-decoration: none;
       transition: box-shadow .5s ease; }
       .products-product a:hover {
         box-shadow: 0 0 0.25rem rgba(0, 0, 0, 0.25); }
@@ -483,6 +488,9 @@ hr {
   @media (min-width: 600px) {
     .splash-content {
       max-width: 33.3333333vw; } }
+  .splash-content em {
+    color: #7fd8cf;
+    font-style: normal; }
   .splash-content-heading {
     font-weight: 100; }
 
@@ -499,6 +507,9 @@ hr {
   .page .page-title {
     font-weight: 100; }
 
+.page--contact-email::before {
+  content: 'jen.castlerocklavender@gmail.com'; }
+
 .page--contact a {
   color: #222222;
   display: inline-block;
@@ -513,10 +524,10 @@ hr {
       flex-wrap: wrap;
   margin-left: -1rem; }
   .gallery-image {
-    margin-top: 0;
-    max-width: calc(100% - 1rem);
+    margin-bottom: 1rem;
     margin-left: 1rem;
-    margin-bottom: 1rem; }
+    margin-top: 0;
+    max-width: calc(100% - 1rem); }
     @media (min-width: 600px) {
       .gallery-image {
         max-width: calc(33.33333333% - 1rem); } }
@@ -528,26 +539,26 @@ hr {
   .lightbox:target > img {
     opacity: 1; }
   .lightbox img {
-    opacity: 0;
-    transition: opacity 1s ease;
-    max-width: 100%;
+    display: block;
+    margin: 0 auto;
     max-height: 100%;
-    display: block; }
+    max-width: 100%;
+    opacity: 0;
+    transition: opacity 1s ease; }
   .lightbox-close {
+    color: #ffffff;
     position: absolute;
-    transform: translate(calc(50vw - 100%), -50vh);
-    color: white;
-    text-decoration: none; }
+    text-decoration: none;
+    transform: translate(calc(50vw - 100%), -50vh); }
   .lightbox-next, .lightbox-prev {
-    width: 2rem;
-    height: 2rem;
+    background-color: #ffffff;
     border-radius: 1rem;
-    background-color: white;
     display: inline-block;
-    background-color: white;
-    text-align: center;
+    height: 2rem;
     line-height: 2rem;
-    text-decoration: none; }
+    text-align: center;
+    text-decoration: none;
+    width: 2rem; }
   .lightbox-next {
     transform: translate(-1rem, -50%); }
     .lightbox-next:before {
@@ -556,9 +567,6 @@ hr {
     transform: translate(1rem, -50%); }
     .lightbox-prev:before {
       content: '<<'; }
-  .lightbox img {
-    display: block;
-    margin: 0 auto; }
 
 .page--uses-posts-title {
   border-bottom: solid thin #7fd8cf; }
@@ -567,6 +575,6 @@ hr {
     text-decoration: none; }
 
 .page--uses-posts-divider {
-  margin-top: 4rem;
+  border: 0;
   display: block;
-  border: 0; }
+  margin-top: 4rem; }

@@ -45,6 +45,7 @@ gallery_images:
 
 
 <style class="scss">
+  @import 'theme/vars';
   @import 'util/mixins.mediaquries';
 
   .gallery {
@@ -57,10 +58,10 @@ gallery_images:
         max-width: calc(33.33333333% - 1rem);
       }
 
+      margin-bottom: 1rem;
+      margin-left: 1rem;
       margin-top: 0;
       max-width: calc(100% - 1rem);
-      margin-left: 1rem;
-      margin-bottom: 1rem;
 
       img {
         width: 100%;
@@ -78,31 +79,31 @@ gallery_images:
     }
 
     img {
+      display: block;
+      margin: 0 auto;
+      max-height: 100%;
+      max-width: 100%;
       opacity: 0;
       transition: opacity 1s ease;
-      max-width: 100%;
-      max-height: 100%;
-      display: block;
     }
 
     &-close {
+      color: $white;
       position: absolute;
-      transform: translate(calc(50vw - 100%), -50vh);
-      color: white;
       text-decoration: none;
+      transform: translate(calc(50vw - 100%), -50vh);
     }
 
     &-next,
     &-prev {
-      width: 2rem;
-      height: 2rem;
+      background-color: $white;
       border-radius: 1rem;
-      background-color: white;
       display: inline-block;
-      background-color: white;
-      text-align: center;
+      height: 2rem;
       line-height: 2rem;
+      text-align: center;
       text-decoration: none;
+      width: 2rem;
     }
 
     &-next {
@@ -119,11 +120,6 @@ gallery_images:
       &:before {
         content: '<<';
       }
-    }
-
-    img {
-      display: block;
-      margin: 0 auto;
     }
   }
 </style>
