@@ -4,6 +4,7 @@ layout: default
 <div class="container">
   <div class="page page--{{page.title | slugify }} flex--grid">
     <div class="page-content">
+      <a href="cloudcannon:collections/{{page.path}}" collapse>Edit</a>
       <h3 class="font--light">{{page.title}}</h3>
       {{ content }}
     </div>
