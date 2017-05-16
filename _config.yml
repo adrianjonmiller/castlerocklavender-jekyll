@@ -31,7 +31,6 @@ exclude:
   - node_modules
   - gulpfile.js
   - package.json
-  - uploads
 
 gems:
   - jekyll-assets

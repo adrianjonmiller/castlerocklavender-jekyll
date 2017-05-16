@@ -1,3 +1,23 @@
+.index-banner {
+  margin-bottom: 4rem; }
+
+.index-content {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap; }
+  @media (min-width: 600px) {
+    .index-content {
+      -ms-flex-wrap: nowrap;
+          flex-wrap: nowrap; } }
+  .index-content-sidebar {
+    margin-top: 3rem;
+    min-width: 100%; }
+    @media (min-width: 600px) {
+      .index-content-sidebar {
+        margin-top: 0;
+        min-width: 23rem; } }
+
 .origin {
   position: relative; }
 
@@ -310,26 +330,6 @@ hr {
   border: 0;
   border-bottom: solid thin #7fd8cf; }
 
-.index-banner {
-  margin-bottom: 4rem; }
-
-.index-content {
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap; }
-  @media (min-width: 600px) {
-    .index-content {
-      -ms-flex-wrap: nowrap;
-          flex-wrap: nowrap; } }
-  .index-content-sidebar {
-    margin-top: 3rem;
-    min-width: 100%; }
-    @media (min-width: 600px) {
-      .index-content-sidebar {
-        margin-top: 0;
-        min-width: 23rem; } }
-
 .banner {
   background-color: #9e896f; }
   .banner-list {
@@ -516,16 +516,21 @@ hr {
 .default-main {
   margin-top: 3rem; }
 
-.page {
-  padding-top: 4rem; }
-  .page .page-title {
-    font-weight: 100; }
-
 [href*='cloudcannon:'] {
   display: none; }
 
 .cms-editor-active [href*='cloudcannon:'] {
   display: block; }
+
+.page {
+  padding-top: 4rem; }
+  .page .page-title {
+    font-weight: 100; }
+
+.page {
+  padding-top: 4rem; }
+  .page .page-title {
+    font-weight: 100; }
 
 .page {
   padding-top: 4rem; }
