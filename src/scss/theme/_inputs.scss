@@ -1,5 +1,12 @@
 @import 'vars';
 
-legend {
-  color: map-get($theme, text);
+fieldset {
+  legend {
+    color: map-get($theme, text);
+  }
+
+  input {
+    margin-top: 0;
+    box-shadow: 0 0 3px rgba(black, 0.6) inset;
+  }
 }

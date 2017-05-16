@@ -39,6 +39,8 @@ textarea {
 }
 
 fieldset {
+  width: 100%;
+
   legend {
     line-height: 1rem;
     padding-left: .25em;
@@ -46,7 +48,17 @@ fieldset {
     transition: transform .25s ease-in-out;
   }
 
+  input {
+    width: 100%;
+    height: $input-height;
+    border-radius: .1rem;
+    outline: none;
+    font-size: 16px;
+    padding-left: .25rem;
+    padding-right: .25rem;
+  }
+
   &:not(.has-content):not(.has-focus) > legend:first-child {
-    transform: translate(0, calc(#{$input-height/2} + 50%));
+    transform: translate(0, $input-height) translate(0, -100%);
   }
 }

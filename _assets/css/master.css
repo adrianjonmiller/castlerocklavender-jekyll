@@ -75,14 +75,23 @@ input [type='email'], input [type='number'], input [type='password'], input [typ
   padding: calc((2.5rem - 1rem)/2) 0.25em;
   width: 100%; }
 
-fieldset legend {
-  line-height: 1rem;
-  padding-left: .25em;
-  pointer-events: none;
-  transition: transform .25s ease-in-out; }
-
-fieldset:not(.has-content):not(.has-focus) > legend:first-child {
-  transform: translate(0, calc(1.25rem + 50%)); }
+fieldset {
+  width: 100%; }
+  fieldset legend {
+    line-height: 1rem;
+    padding-left: .25em;
+    pointer-events: none;
+    transition: transform .25s ease-in-out; }
+  fieldset input {
+    width: 100%;
+    height: 2.5rem;
+    border-radius: .1rem;
+    outline: none;
+    font-size: 16px;
+    padding-left: .25rem;
+    padding-right: .25rem; }
+  fieldset:not(.has-content):not(.has-focus) > legend:first-child {
+    transform: translate(0, 2.5rem) translate(0, -100%); }
 
 .popover {
   background-color: rgba(0, 0, 0, 0.8);
@@ -239,8 +248,12 @@ ul.unstyle {
   list-style: none;
   padding-left: 0; }
 
-legend {
+fieldset legend {
   color: #222222; }
+
+fieldset input {
+  margin-top: 0;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.6) inset; }
 
 main {
   margin-bottom: 5rem;
@@ -503,16 +516,16 @@ hr {
 .default-main {
   margin-top: 3rem; }
 
+.page {
+  padding-top: 4rem; }
+  .page .page-title {
+    font-weight: 100; }
+
 [href*='cloudcannon:'] {
   display: none; }
 
 .cms-editor-active [href*='cloudcannon:'] {
   display: block; }
-
-.page {
-  padding-top: 4rem; }
-  .page .page-title {
-    font-weight: 100; }
 
 .page {
   padding-top: 4rem; }
