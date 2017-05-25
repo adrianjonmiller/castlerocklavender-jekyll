@@ -49,13 +49,13 @@ fieldset {
   }
 
   input {
-    width: 100%;
-    height: $input-height;
     border-radius: .1rem;
-    outline: none;
     font-size: 16px;
+    height: $input-height;
+    outline: none;
     padding-left: .25rem;
     padding-right: .25rem;
+    width: 100%;
   }
 
   &:not(.has-content):not(.has-focus) > legend:first-child {
