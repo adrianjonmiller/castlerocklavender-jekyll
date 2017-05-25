@@ -600,6 +600,16 @@ hr {
     .lightbox-prev:before {
       content: '<<'; }
 
+.page--thanks-email::before {
+  content: 'jen.castlerocklavender@gmail.com'; }
+
+.page--thanks a {
+  color: #222222;
+  display: inline-block;
+  text-decoration: none; }
+  .page--thanks a:hover {
+    text-decoration: underline; }
+
 .page--uses-posts-title {
   border-bottom: solid thin #7fd8cf; }
   .page--uses-posts-title > a {

@@ -4,12 +4,11 @@
   <nav class="t--header-nav">
     <ul class="t--header-nav--tablet unstyle flex" collapse>
       {% for node in nodes %}
-        {% if node.title != nil and node.order and node.url contains ".html" or node.url == '/' %}
-          {% assign loopHalf = forloop.length | divided_by: 2 %}
+        {% if node.title != nil and node.order > 0 and node.url contains ".html" or node.url == '/' %}
           <li class="flex-fill {% if node.title == page.title %}is-active{% endif %}" collapse>
             <a href="{{ node.url | prepend:site.baseurl }}">{{node.title}}</a>
           </li>
-          {% if loopHalf == forloop.index %}
+          {% if 4 == forloop.index %}
             <li class="t--header-logoSpacer" collapse></li>
           {% endif %}
         {% endif %}

@@ -1,0 +1,65 @@
+---
+layout: default
+order: -1
+title: Thanks
+---
+
+<div class=" container">
+  <div class="page page--{{page.title | slugify }} flex--grid">
+    <div class="page-content">
+      <h4 class="font--light editable">Thank you for contacting us</h4>
+      <h6 class="font--light editable">We'll get back to you shortly</h6>
+    </div>
+    <div class="flex-end">
+      <ul class="unstyle">
+        <li>
+          <small collapse><i class="ion-email color--accent"></i> EMAIL</small>
+          <hr collapse-half>
+          <p>
+            <a href="mailto:jen.castlerocklavender@gmail.com" class="page--contact-email editable"></a>
+          </p>
+        </li>
+        <li>
+          <small collapse><i class="ion-ios-telephone color--accent"></i> PHONE</small>
+          <hr collapse-half>
+          <p>
+            <a href="tel:3603531905" class="editable">(360) 353-1905</a>
+          </p>
+        </li>
+        <li>
+          <small collapse><i class="ion-ios-location color--accent"></i> ADDRESS</small>
+          <hr collapse-half>
+          <a href="https://goo.gl/maps/dzUDF2jxWj22" class="editable" target="_blank">
+            <span>865 Ph 10</span><br>
+            <span>Castle Rock, Washington</span><br>
+            <span>98611</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+{% comment %}
+
+<style class="scss">
+  @import 'theme/vars';
+
+  .page--thanks {
+    &-email::before {
+      content: 'jen.castlerocklavender@gmail.com';
+    }
+
+    a {
+      color: map-get($theme, text);
+      display: inline-block;
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+</style>
+{% endcomment %}
