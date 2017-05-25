@@ -367,7 +367,8 @@ hr {
       font-weight: 100;
       line-height: 4rem; }
 
-.button {
+.button,
+[role="button"] {
   background-color: #7fd8cf;
   border: 0;
   border-radius: .25rem;
@@ -378,7 +379,8 @@ hr {
   outline: none;
   padding: .75rem 1.5rem;
   text-decoration: none; }
-  .button:hover {
+  .button:hover,
+  [role="button"]:hover {
     cursor: pointer; }
 
 .footer {
@@ -516,16 +518,16 @@ hr {
 .default-main {
   margin-top: 3rem; }
 
-.page {
-  padding-top: 4rem; }
-  .page .page-title {
-    font-weight: 100; }
-
 [href*='cloudcannon:'] {
   display: none; }
 
 .cms-editor-active [href*='cloudcannon:'] {
   display: block; }
+
+.page {
+  padding-top: 4rem; }
+  .page .page-title {
+    font-weight: 100; }
 
 .page {
   padding-top: 4rem; }
